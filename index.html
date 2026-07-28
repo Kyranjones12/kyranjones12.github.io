@@ -4,19 +4,106 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luxury Auto Detailing</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #222222;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background-color: #111111;
+            color: #ffffff;
+        }
+
+        .navigation-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 30px;
+        }
+
+        .logo {
+            width: 70px;
+            height: auto;
+        }
+
+        nav a {
+            margin-left: 20px;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            padding: 80px 30px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            margin-bottom: 10px;
+            font-size: 42px;
+        }
+
+        .hero p {
+            margin: 0 auto;
+            max-width: 700px;
+            font-size: 20px;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 30px;
+            background-color: #ffffff;
+        }
+
+        footer {
+            padding: 20px;
+            text-align: center;
+            color: #ffffff;
+            background-color: #111111;
+        }
+    </style>
 </head>
 
 <body>
     <header>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="pages/about.html">About</a>
-            <a href="service.html">Services</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+        <div class="navigation-container">
+            <a href="index.html">
+                <img
+                    class="logo"
+                    src="images/logo.png"
+                    alt="Luxury Auto Detailing logo"
+                >
+            </a>
+
+            <nav aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="pages/about.html">About</a>
+                <a href="service.html">Services</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+
+        <div class="hero">
+            <h1>Restore the Luxury in Your Vehicle</h1>
+
+            <p>
+                Professional auto detailing that cleans, protects, and renews your vehicle inside and out.
+            </p>
+        </div>
     </header>
 
     <main>
+        <h2>Your Local Destination for Professional Auto Detailing</h2>
+
         <p>
             The web is today’s Main Street because it is where customers go to discover businesses, compare services, and decide where to spend their money. A professional website helps a car detailing business attract customers by showing its services, prices, previous work, contact information, and customer reviews. Just as a storefront on Main Street helps people notice and trust a local business, a website gives the business a visible and welcoming place online.
         </p>
