@@ -194,3 +194,196 @@ footer {
         padding: 20px;
     }
 }
+.marketing-header {
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            #555555 0%,
+            #242424 35%,
+            #111111 75%
+        );
+}
+
+.marketing-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    width: 92%;
+    margin: 0 auto;
+    padding: 1.25rem 0;
+}
+
+.marketing-brand {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.marketing-logo {
+    display: block;
+    width: 16vw;
+    max-width: 22%;
+    height: auto;
+    object-fit: contain;
+}
+
+.marketing-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 1.25rem;
+}
+
+.marketing-links a {
+    margin: 0;
+}
+
+.marketing-hero {
+    width: 88%;
+    margin: 0 auto;
+    padding: 10vh 0 12vh;
+    text-align: center;
+}
+
+.marketing-hero h1 {
+    max-width: 80%;
+    margin: 0 auto 1rem;
+}
+
+.marketing-hero p {
+    max-width: 65%;
+    margin: 0 auto 2rem;
+    font-size: 1.2rem;
+}
+
+.marketing-main {
+    width: 92%;
+    max-width: none;
+    margin: 3rem auto;
+    padding: 0;
+    background-color: transparent;
+}
+
+.marketing-section {
+    margin-bottom: 4rem;
+}
+
+.marketing-section > h2,
+.marketing-section > p {
+    text-align: center;
+}
+
+.marketing-section > p {
+    max-width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.marketing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.marketing-card {
+    padding: 2rem;
+    background-color: #ffffff;
+    border: 0.0625rem solid #d5d5d5;
+    border-radius: 0.75rem;
+}
+
+.marketing-card h2,
+.marketing-card h3 {
+    margin-top: 0;
+}
+
+.marketing-price {
+    margin: 1rem 0;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.marketing-list {
+    padding-left: 1.25rem;
+}
+
+.marketing-list li {
+    margin-bottom: 0.75rem;
+}
+
+.marketing-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn-secondary {
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    color: #111111;
+    font-weight: 700;
+    text-decoration: none;
+    background-color: #ffffff;
+    border: 0.125rem solid #111111;
+    border-radius: 0.3125rem;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+    color: #ffffff;
+    background-color: #111111;
+}
+
+a:focus-visible {
+    outline: 0.1875rem solid #f0c36a;
+    outline-offset: 0.25rem;
+}
+
+@media (max-width: 48rem) {
+    .marketing-nav {
+        flex-direction: column;
+    }
+
+    .marketing-logo {
+        width: 42vw;
+        max-width: 55%;
+    }
+
+    .marketing-links {
+        justify-content: center;
+    }
+
+    .marketing-hero {
+        width: 94%;
+        padding: 7vh 0 9vh;
+    }
+
+    .marketing-hero h1,
+    .marketing-hero p,
+    .marketing-section > p {
+        max-width: 100%;
+    }
+
+    .marketing-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 25rem) {
+    .marketing-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .marketing-main {
+        width: 94%;
+    }
+
+    .marketing-card {
+        padding: 1.25rem;
+    }
+}
