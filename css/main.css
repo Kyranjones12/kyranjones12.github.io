@@ -113,6 +113,11 @@ main {
     background-color: #ffffff;
 }
 
+.about-image {
+    display: block;
+    margin-top: 25px;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -142,8 +147,10 @@ th {
 }
 
 .gallery-table img {
+    display: block;
     width: 120px;
     height: 90px;
+    margin: 0 auto;
     object-fit: cover;
 }
 
@@ -164,11 +171,11 @@ footer {
         gap: 15px;
     }
 
-    .navigation-container nav a {
-        display: inline-block;
-        margin: 5px 8px;
+    .navigation-container nav {
+        text-align: center;
     }
 
+    .navigation-container nav a,
     header > nav a {
         display: inline-block;
         margin: 5px 8px;
