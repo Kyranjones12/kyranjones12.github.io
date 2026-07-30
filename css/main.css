@@ -14,11 +14,17 @@
     font-display: swap;
 }
 
+/* Universal settings */
+
 *,
 *::before,
 *::after {
     box-sizing: border-box;
     font-family: "Kyran Sans", Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -29,8 +35,15 @@ body {
 }
 
 h1 {
-    font-size: 2.625rem;
+    margin-top: 0;
+    font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 700;
+    line-height: 1.15;
+}
+
+h2,
+h3 {
+    line-height: 1.25;
 }
 
 img {
@@ -38,15 +51,26 @@ img {
     height: auto;
 }
 
-.btn-primary {
+a {
+    overflow-wrap: anywhere;
+}
+
+/* Buttons */
+
+.btn-primary,
+.btn-secondary {
     display: inline-block;
-    padding: 12px 20px;
-    color: #ffffff;
+    padding: 0.75rem 1.25rem;
     font-weight: 700;
+    text-align: center;
     text-decoration: none;
+    border-radius: 0.3125rem;
+}
+
+.btn-primary {
+    color: #ffffff;
     background-color: #111111;
-    border: 2px solid #111111;
-    border-radius: 5px;
+    border: 0.125rem solid #111111;
 }
 
 .btn-primary:hover,
@@ -55,17 +79,41 @@ img {
     background-color: #ffffff;
 }
 
+.btn-secondary {
+    color: #111111;
+    background-color: #ffffff;
+    border: 0.125rem solid #111111;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+    color: #ffffff;
+    background-color: #111111;
+}
+
+a:focus-visible {
+    outline: 0.1875rem solid #f0c36a;
+    outline-offset: 0.25rem;
+}
+
+/* Main site header and navigation */
+
 header {
     color: #ffffff;
     background-color: #111111;
 }
 
 header > nav {
-    padding: 20px 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.25rem;
+    width: 92%;
+    margin: 0 auto;
+    padding: 1.25rem 0;
 }
 
 nav a {
-    margin-right: 20px;
     color: #ffffff;
     text-decoration: none;
 }
@@ -75,125 +123,157 @@ nav a:focus {
     text-decoration: underline;
 }
 
-.navigation-container {
+.navigation-container,
+.marketing-nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 15px 30px;
+    gap: 3vw;
+    width: 92%;
+    margin: 0 auto;
+    padding: 2.5vh 0;
 }
 
-.navigation-container nav a {
-    margin-right: 0;
-    margin-left: 20px;
+.navigation-container > a,
+.marketing-brand {
+    display: block;
+    flex: 0 1 30%;
+    min-width: 0;
+    max-width: 24rem;
+}
+
+/*
+The slight scale increase helps the visible logo fill its allotted space,
+especially when the PNG contains transparent padding.
+*/
+
+.logo,
+.marketing-logo {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    transform: scale(1.12);
 }
 
 .logo {
-    width: 140px;
+    transform-origin: left center;
 }
 
+.marketing-logo {
+    transform-origin: center;
+}
+
+.navigation-container nav,
+.marketing-links {
+    display: flex;
+    flex: 1 1 65%;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: clamp(0.75rem, 2vw, 1.75rem);
+    min-width: 0;
+}
+
+.navigation-container nav a,
+.marketing-links a {
+    margin: 0;
+}
+
+/* Homepage hero */
+
 .hero {
-    padding: 80px 30px;
+    width: 92%;
+    margin: 0 auto;
+    padding: 10vh 0 12vh;
     text-align: center;
 }
 
 .hero h1 {
-    margin-bottom: 10px;
+    max-width: 60rem;
+    margin: 0 auto 1rem;
 }
 
 .hero p {
-    max-width: 700px;
+    max-width: 44rem;
     margin: 0 auto;
-    font-size: 1.25rem;
+    font-size: clamp(1rem, 2.2vw, 1.25rem);
 }
 
+/* Main content */
+
 main {
-    max-width: 900px;
-    margin: 30px auto;
-    padding: 30px;
+    width: 92%;
+    max-width: 56rem;
+    margin: 3rem auto;
+    padding: clamp(1.25rem, 4vw, 2rem);
     background-color: #ffffff;
 }
 
 .about-image {
     display: block;
-    margin-top: 25px;
+    margin-top: 1.5rem;
 }
+
+/* Tables */
 
 table {
     width: 100%;
+    table-layout: fixed;
     border-collapse: collapse;
 }
 
 caption {
-    margin-bottom: 15px;
+    margin-bottom: 1rem;
     font-size: 1.375rem;
     font-weight: 700;
 }
 
 th,
 td {
-    padding: 12px;
-    border: 1px solid #cccccc;
+    padding: 0.75rem;
+    border: 0.0625rem solid #cccccc;
     text-align: left;
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 th {
     background-color: #eeeeee;
 }
 
+/* Gallery */
+
 .gallery-table td {
-    padding: 20px;
+    padding: 1.25rem;
     text-align: center;
     vertical-align: top;
 }
 
 .gallery-table img {
     display: block;
-    width: 120px;
-    height: 90px;
+    width: 7.5rem;
+    height: 5.625rem;
     margin: 0 auto;
     object-fit: cover;
 }
 
 .gallery-table p {
-    margin: 8px 0 0;
+    margin: 0.5rem 0 0;
 }
 
+/* Footer */
+
 footer {
-    padding: 20px;
+    padding: 1.25rem 5%;
     color: #ffffff;
     text-align: center;
     background-color: #111111;
 }
 
-@media (max-width: 650px) {
-    .navigation-container {
-        flex-direction: column;
-        gap: 15px;
-    }
+/* Marketing pages */
 
-    .navigation-container nav {
-        text-align: center;
-    }
-
-    .navigation-container nav a,
-    header > nav a {
-        display: inline-block;
-        margin: 5px 8px;
-    }
-
-    .hero {
-        padding: 50px 20px;
-    }
-
-    h1 {
-        font-size: 2rem;
-    }
-
-    main {
-        margin: 20px 10px;
-        padding: 20px;
-    }
-}
 .marketing-header {
     background:
         radial-gradient(
@@ -204,41 +284,6 @@ footer {
         );
 }
 
-.marketing-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-    width: 92%;
-    margin: 0 auto;
-    padding: 1.25rem 0;
-}
-
-.marketing-brand {
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
-}
-
-.marketing-logo {
-    display: block;
-    width: 16vw;
-    max-width: 22%;
-    height: auto;
-    object-fit: contain;
-}
-
-.marketing-links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    gap: 1.25rem;
-}
-
-.marketing-links a {
-    margin: 0;
-}
-
 .marketing-hero {
     width: 88%;
     margin: 0 auto;
@@ -247,14 +292,14 @@ footer {
 }
 
 .marketing-hero h1 {
-    max-width: 80%;
+    max-width: 55rem;
     margin: 0 auto 1rem;
 }
 
 .marketing-hero p {
-    max-width: 65%;
+    max-width: 44rem;
     margin: 0 auto 2rem;
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2.2vw, 1.2rem);
 }
 
 .marketing-main {
@@ -275,20 +320,21 @@ footer {
 }
 
 .marketing-section > p {
-    max-width: 70%;
+    max-width: 44rem;
     margin-right: auto;
     margin-left: auto;
 }
 
 .marketing-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(1rem, 3vw, 2rem);
     margin-top: 2rem;
 }
 
 .marketing-card {
-    padding: 2rem;
+    min-width: 0;
+    padding: clamp(1.25rem, 3vw, 2rem);
     background-color: #ffffff;
     border: 0.0625rem solid #d5d5d5;
     border-radius: 0.75rem;
@@ -320,40 +366,47 @@ footer {
     gap: 1rem;
 }
 
-.btn-secondary {
-    display: inline-block;
-    padding: 0.75rem 1.25rem;
-    color: #111111;
-    font-weight: 700;
-    text-decoration: none;
-    background-color: #ffffff;
-    border: 0.125rem solid #111111;
-    border-radius: 0.3125rem;
-}
-
-.btn-secondary:hover,
-.btn-secondary:focus {
-    color: #ffffff;
-    background-color: #111111;
-}
-
-a:focus-visible {
-    outline: 0.1875rem solid #f0c36a;
-    outline-offset: 0.25rem;
-}
+/* Tablet and mobile */
 
 @media (max-width: 48rem) {
+    .navigation-container,
     .marketing-nav {
         flex-direction: column;
+        gap: 2vh;
+        width: 94%;
     }
 
+    .navigation-container > a,
+    .marketing-brand {
+        flex: none;
+        width: 70%;
+        max-width: 22rem;
+    }
+
+    .logo,
     .marketing-logo {
-        width: 42vw;
-        max-width: 55%;
+        width: 100%;
+        transform: scale(1.05);
+        transform-origin: center;
     }
 
+    .navigation-container nav,
     .marketing-links {
+        flex: none;
+        width: 100%;
         justify-content: center;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    header > nav {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero {
+        width: 94%;
+        padding: 7vh 0 9vh;
     }
 
     .marketing-hero {
@@ -367,23 +420,68 @@ a:focus-visible {
         max-width: 100%;
     }
 
+    main {
+        width: 94%;
+        margin: 3vh auto;
+        padding: 5%;
+    }
+
+    .marketing-main {
+        width: 94%;
+        padding: 0;
+    }
+
     .marketing-grid {
         grid-template-columns: 1fr;
     }
 }
 
-@media (max-width: 25rem) {
-    .marketing-links {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5rem;
+/* Small phones, including 360px testing */
+
+@media (max-width: 36rem) {
+    .gallery-table,
+    .gallery-table tbody,
+    .gallery-table tr,
+    .gallery-table td {
+        display: block;
+        width: 100%;
     }
 
-    .marketing-main {
-        width: 94%;
+    .gallery-table tr {
+        margin-bottom: 1rem;
+    }
+
+    .gallery-table td {
+        margin-bottom: 0.75rem;
+    }
+
+    .marketing-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .marketing-actions .btn-primary,
+    .marketing-actions .btn-secondary {
+        width: 100%;
+    }
+}
+
+@media (max-width: 25rem) {
+    .navigation-container > a,
+    .marketing-brand {
+        width: 82%;
+        max-width: 82%;
+    }
+
+    .navigation-container nav,
+    .marketing-links,
+    header > nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.625rem;
     }
 
     .marketing-card {
-        padding: 1.25rem;
+        padding: 5%;
     }
 }
