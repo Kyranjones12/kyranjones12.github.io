@@ -1,0 +1,316 @@
+@font-face {
+    font-family: "Mountain Bean";
+    src: url("../fonts/mountainbean.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: #f7f3eb;
+    color: #2f2a24;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: inherit;
+}
+
+.skip-link {
+    position: absolute;
+    top: -60px;
+    left: 16px;
+    z-index: 1000;
+    padding: 10px 16px;
+    background-color: #ffffff;
+    color: #2f2a24;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.skip-link:focus {
+    top: 16px;
+}
+
+.site-header {
+    background-color: #25382e;
+    color: #ffffff;
+}
+
+.nav {
+    width: min(1100px, 92%);
+    min-height: 80px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.brand img {
+    display: block;
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.brand-name {
+    font-family: "Mountain Bean", Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+}
+
+.menu {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    list-style: none;
+}
+
+.menu a {
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.menu a:hover,
+.menu a:focus {
+    color: #d7b26d;
+}
+
+.menu a[aria-current="page"] {
+    color: #d7b26d;
+    border-bottom: 2px solid #d7b26d;
+    padding-bottom: 5px;
+}
+
+.nav-toggle {
+    display: none;
+    padding: 9px 14px;
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.nav-toggle:hover,
+.nav-toggle:focus {
+    background-color: #ffffff;
+    color: #25382e;
+}
+
+.hero {
+    min-height: 72vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px;
+    background:
+        linear-gradient(
+            rgba(24, 34, 29, 0.55),
+            rgba(24, 34, 29, 0.55)
+        ),
+        url("../images/hero.jpg") center / cover no-repeat;
+    color: #ffffff;
+    text-align: center;
+}
+
+.hero-inner {
+    width: min(760px, 100%);
+}
+
+.hero h1 {
+    margin: 0 0 20px;
+    font-family: "Mountain Bean", Georgia, serif;
+    font-size: clamp(2.8rem, 7vw, 5rem);
+    line-height: 1.05;
+}
+
+.hero p {
+    max-width: 620px;
+    margin: 0 auto 32px;
+    font-size: clamp(1.05rem, 2vw, 1.3rem);
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 13px 26px;
+    background-color: #d7b26d;
+    color: #252119;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #e4c78f;
+    transform: translateY(-2px);
+}
+
+main {
+    min-height: 60vh;
+}
+
+.page-content {
+    width: min(1000px, 90%);
+    margin: 0 auto;
+    padding: 60px 0;
+}
+
+.page-content h1,
+.page-content h2 {
+    color: #25382e;
+    font-family: "Mountain Bean", Georgia, serif;
+}
+
+.page-content h1 {
+    margin-top: 0;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+}
+
+.page-content h2 {
+    margin-top: 36px;
+    font-size: 2rem;
+}
+
+.page-content p {
+    max-width: 760px;
+}
+
+.site-footer {
+    padding: 28px 20px;
+    background-color: #1c2922;
+    color: #ffffff;
+    text-align: center;
+}
+
+.footer-content {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+}
+
+.site-footer p {
+    margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+    .nav {
+        position: relative;
+        min-height: 72px;
+        flex-wrap: wrap;
+        gap: 0;
+    }
+
+    .brand-name {
+        font-size: 1.25rem;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .menu {
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 12px 0 20px;
+    }
+
+    .menu.open {
+        display: flex;
+    }
+
+    .menu li {
+        width: 100%;
+    }
+
+    .menu a {
+        display: block;
+        width: 100%;
+        padding: 12px 0;
+    }
+
+    .menu a[aria-current="page"] {
+        border-bottom: 0;
+        padding-bottom: 12px;
+    }
+
+    .hero {
+        min-height: 65vh;
+        padding: 60px 20px;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.5rem, 11vw, 4rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .nav {
+        width: 90%;
+    }
+
+    .brand img {
+        width: 42px;
+        height: 42px;
+    }
+
+    .brand-name {
+        font-size: 1.05rem;
+    }
+
+    .hero {
+        min-height: 60vh;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .btn-primary {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .page-content {
+        width: 88%;
+        padding: 45px 0;
+    }
+}
