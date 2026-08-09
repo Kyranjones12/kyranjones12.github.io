@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Visit Mountain Bean Café in Estes Park, Colorado, view our hours, and get in touch."
+    >
+    <meta name="robots" content="index, follow">
+
+    <title>Mountain Bean Café | Contact</title>
+
+    <link rel="stylesheet" href="css/main.css">
+
+    <link
+        rel="preload"
+        href="fonts/mountainbean.woff2"
+        as="font"
+        type="font/woff2"
+        crossorigin
+    >
+
+    <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX">
+    </script>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag("js", new Date());
+        gtag("config", "G-XXXXXXXXXX");
+    </script>
+</head>
+
+<body>
+
+    <a class="skip-link" href="#main-content">
+        Skip to main content
+    </a>
+
+    <header class="site-header">
+
+        <nav class="nav" aria-label="Primary navigation">
+
+            <a class="brand" href="index.html">
+                <img
+                    src="images/logo.png"
+                    alt="Mountain Bean Café logo"
+                    width="50"
+                    height="50"
+                >
+
+                <span class="brand-name">
+                    Mountain Bean Café
+                </span>
+            </a>
+
+            <button
+                class="nav-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="primary-menu"
+                aria-label="Open navigation menu"
+            >
+                Menu
+            </button>
+
+            <ul id="primary-menu" class="menu">
+
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+
+                <li>
+                    <a href="subscription.html">
+                        Subscription
+                    </a>
+                </li>
+
+                <li>
+                    <a href="gallery.html">
+                        Gallery
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contact.html" aria-current="page">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <main id="main-content">
+
+        <section class="page-content">
+
+            <h1>Visit Us</h1>
+
+            <p>
+                Stop by Mountain Bean Café and enjoy a fresh cup
+                surrounded by Colorado mountain inspiration.
+            </p>
+
+            <div class="contact-grid">
+
+                <div class="contact-card">
+
+                    <h2>Café Information</h2>
+
+                    <p>
+                        <strong>Address</strong><br>
+                        123 Summit Trail<br>
+                        Estes Park, CO 80517
+                    </p>
+
+                    <p>
+                        <strong>Monday–Friday</strong><br>
+                        7:00 AM – 4:00 PM
+                    </p>
+
+                    <p>
+                        <strong>Saturday–Sunday</strong><br>
+                        8:00 AM – 5:00 PM
+                    </p>
+
+                    <a
+                        class="btn-primary"
+                        href="mailto:info@mountainbean.com"
+                    >
+                        Email Us
+                    </a>
+
+                </div>
+
+                <div class="map-wrap">
+
+                    <iframe
+                        title="Map showing Estes Park, Colorado"
+                        src="https://www.google.com/maps?q=Estes+Park,+Colorado&output=embed"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        allowfullscreen
+                    >
+                    </iframe>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+
+        <div class="footer-content">
+
+            <p>
+                &copy; <span id="current-year">2026</span>
+                Mountain Bean Café. All rights reserved.
+            </p>
+
+            <p>
+                Fresh coffee. Mountain inspiration.
+            </p>
+
+        </div>
+
+    </footer>
+
+    <script>
+        const navToggle = document.querySelector(".nav-toggle");
+        const primaryMenu = document.getElementById("primary-menu");
+
+        if (navToggle && primaryMenu) {
+            navToggle.addEventListener("click", function () {
+
+                const menuIsOpen =
+                    navToggle.getAttribute("aria-expanded") === "true";
+
+                navToggle.setAttribute(
+                    "aria-expanded",
+                    String(!menuIsOpen)
+                );
+
+                navToggle.setAttribute(
+                    "aria-label",
+                    menuIsOpen
+                        ? "Open navigation menu"
+                        : "Close navigation menu"
+                );
+
+                primaryMenu.classList.toggle("open");
+            });
+
+            primaryMenu.querySelectorAll("a").forEach(function (link) {
+
+                link.addEventListener("click", function () {
+
+                    navToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                    navToggle.setAttribute(
+                        "aria-label",
+                        "Open navigation menu"
+                    );
+
+                    primaryMenu.classList.remove("open");
+                });
+
+            });
+        }
+
+        const currentYear =
+            document.getElementById("current-year");
+
+        if (currentYear) {
+            currentYear.textContent =
+                new Date().getFullYear();
+        }
+    </script>
+
+</body>
+
+</html>
