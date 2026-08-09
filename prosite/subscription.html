@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Learn the story behind Mountain Bean Café and our passion for fresh Colorado-inspired coffee."
+    >
+    <meta name="robots" content="index, follow">
+
+    <title>Mountain Bean Café | About</title>
+
+    <link rel="stylesheet" href="css/main.css">
+
+    <link
+        rel="preload"
+        href="fonts/mountainbean.woff2"
+        as="font"
+        type="font/woff2"
+        crossorigin
+    >
+
+    <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX">
+    </script>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag("js", new Date());
+        gtag("config", "G-XXXXXXXXXX");
+    </script>
+</head>
+
+<body>
+
+    <a class="skip-link" href="#main-content">
+        Skip to main content
+    </a>
+
+    <header class="site-header">
+
+        <nav class="nav" aria-label="Primary navigation">
+
+            <a class="brand" href="index.html">
+                <img
+                    src="images/logo.png"
+                    alt="Mountain Bean Café logo"
+                    width="50"
+                    height="50"
+                >
+
+                <span class="brand-name">
+                    Mountain Bean Café
+                </span>
+            </a>
+
+            <button
+                class="nav-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="primary-menu"
+                aria-label="Open navigation menu"
+            >
+                Menu
+            </button>
+
+            <ul id="primary-menu" class="menu">
+
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="about.html" aria-current="page">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="subscription.html">
+                        Subscription
+                    </a>
+                </li>
+
+                <li>
+                    <a href="gallery.html">
+                        Gallery
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contact.html">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <main id="main-content">
+
+        <section class="page-content">
+
+            <h1>Our Origin Story</h1>
+
+            <div class="story-card">
+
+                <p>
+                    <strong>Problem:</strong>
+                    Visitors come to Colorado for the trails, mountain views,
+                    and unforgettable experiences, but great coffee can be
+                    difficult to take home with them.
+                </p>
+
+                <p>
+                    <strong>Promise:</strong>
+                    Mountain Bean Café brings the feeling of the Rockies to
+                    every cup with fresh-roasted coffee inspired by Colorado
+                    adventure.
+                </p>
+
+                <p>
+                    Our goal is simple: serve quality coffee, create a welcoming
+                    café experience, and give customers a taste worth remembering
+                    long after the trip is over.
+                </p>
+
+            </div>
+
+            <figure class="story-figure">
+
+                <img
+                    src="images/hero.jpg"
+                    alt="Coffee beside a mountain stream in Colorado"
+                >
+
+                <figcaption>
+                    Coffee inspired by Colorado adventure.
+                </figcaption>
+
+            </figure>
+
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+
+        <div class="footer-content">
+
+            <p>
+                &copy; <span id="current-year">2026</span>
+                Mountain Bean Café. All rights reserved.
+            </p>
+
+            <p>
+                Fresh coffee. Mountain inspiration.
+            </p>
+
+        </div>
+
+    </footer>
+
+    <script>
+        const navToggle = document.querySelector(".nav-toggle");
+        const primaryMenu = document.getElementById("primary-menu");
+
+        if (navToggle && primaryMenu) {
+            navToggle.addEventListener("click", function () {
+
+                const menuIsOpen =
+                    navToggle.getAttribute("aria-expanded") === "true";
+
+                navToggle.setAttribute(
+                    "aria-expanded",
+                    String(!menuIsOpen)
+                );
+
+                navToggle.setAttribute(
+                    "aria-label",
+                    menuIsOpen
+                        ? "Open navigation menu"
+                        : "Close navigation menu"
+                );
+
+                primaryMenu.classList.toggle("open");
+            });
+
+            primaryMenu.querySelectorAll("a").forEach(function (link) {
+
+                link.addEventListener("click", function () {
+
+                    navToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                    navToggle.setAttribute(
+                        "aria-label",
+                        "Open navigation menu"
+                    );
+
+                    primaryMenu.classList.remove("open");
+                });
+
+            });
+        }
+
+        const currentYear =
+            document.getElementById("current-year");
+
+        if (currentYear) {
+            currentYear.textContent =
+                new Date().getFullYear();
+        }
+    </script>
+
+</body>
+
+</html>
